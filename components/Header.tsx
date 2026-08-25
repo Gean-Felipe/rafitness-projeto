@@ -38,19 +38,32 @@ export function Header() {
         </Link>
         
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="text-xs font-semibold tracking-widest uppercase text-brand-silver hover:text-brand-orange transition-colors">
+            <Link
+              key={link.name}
+              href={link.href}
+              className="relative py-1 text-xs font-bold tracking-widest uppercase text-brand-silver hover:text-brand-orange transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-orange after:transition-all after:duration-300 hover:after:w-full"
+            >
               {link.name}
             </Link>
           ))}
-          <a href="https://wa.me/5565981706248?text=Olá! Gostaria de conhecer os planos da Rafitness Gym." target="_blank" rel="noopener noreferrer" className="bg-brand-orange hover:bg-brand-orange-dark text-brand-black px-6 py-3 rounded-none font-black text-xs uppercase tracking-widest transition-colors shadow-[0_0_20px_rgba(255,106,0,0.3)]">
+          <a
+            href="https://wa.me/5565981706248?text=Olá! Gostaria de conhecer os planos da Rafitness Gym."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-brand-orange hover:bg-brand-orange-dark text-brand-black px-7 py-3 rounded-none font-black text-xs uppercase tracking-widest transition-all duration-200 shadow-[0_0_20px_rgba(255,106,0,0.3)] hover:shadow-[0_0_30px_rgba(255,106,0,0.5)] hover:scale-105"
+          >
             QUERO TREINAR
           </a>
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="lg:hidden z-50 text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
+        <button
+          className="lg:hidden z-50 text-white hover:text-brand-orange transition-colors duration-200 p-1"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Menu"
+        >
           {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
         </button>
 
